@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.kehinde.bakingapp.fragments.RecipeStepDetailFragment">
+
+    <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:resize_mode="fit"
+        android:id="@+id/mExoPlayerView">
+
+    </com.google.android.exoplayer2.ui.SimpleExoPlayerView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp"
+        android:textColor="#222"
+        android:id="@+id/txt_instruction"
+        android:lineSpacingExtra="7dp"
+        android:textSize="16sp"
+        tools:text="2. Melt the butter and bittersweet chocolate together in a microwave or a double boiler. If microwaving, heat for 30 seconds at a time, removing bowl and stirring ingredients in between."/>
+</LinearLayout>
