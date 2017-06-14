@@ -13,22 +13,17 @@ import com.kehinde.bakingapp.util.Constants;
 public class Step implements Parcelable{
 
     private int id;
-    private String shortDescription,description,videoURL;
+    private String shortDescription,description,videoURL, thumbnailURL;
 
     public Step() {
     }
 
-    public Step(int id, String shortDescription, String description, String videoURL) {
+    public Step(int id, String shortDescription, String description, String videoURL, String thumbnailURL) {
         this.id = id;
         this.shortDescription = shortDescription;
         this.description = description;
         this.videoURL = videoURL;
-    }
-
-    public Step(Bundle bundle){
-        this.shortDescription=bundle.getString(Constants.SHORT_DESCRIPTION);
-        this.description=bundle.getString(Constants.DESCRIPTION);
-        this.videoURL=bundle.getString(Constants.VIDEO_URL);
+        this.thumbnailURL = thumbnailURL;
     }
 
     protected Step(Parcel in) {
@@ -36,6 +31,7 @@ public class Step implements Parcelable{
         shortDescription = in.readString();
         description = in.readString();
         videoURL = in.readString();
+        thumbnailURL = in.readString();
     }
 
     public static final Creator<Step> CREATOR = new Creator<Step>() {
@@ -82,12 +78,12 @@ public class Step implements Parcelable{
         this.videoURL = videoURL;
     }
 
-    public Bundle toBundle(Step step){
-        Bundle bundle=new Bundle();
-        bundle.putString(Constants.DESCRIPTION,step.getDescription());
-        bundle.putString(Constants.SHORT_DESCRIPTION,step.getShortDescription());
-        bundle.putString(Constants.VIDEO_URL,step.getVideoURL());
-        return bundle;
+    public String getThumbnailURL() {
+        return thumbnailURL;
+    }
+
+    public void setThumbnailURL(String thumbnailURL) {
+        this.thumbnailURL = thumbnailURL;
     }
 
     @Override
@@ -101,5 +97,6 @@ public class Step implements Parcelable{
         dest.writeString(shortDescription);
         dest.writeString(description);
         dest.writeString(videoURL);
+        dest.writeString(thumbnailURL);
     }
 }

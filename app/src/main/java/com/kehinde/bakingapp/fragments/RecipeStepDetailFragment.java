@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +38,7 @@ import com.google.android.exoplayer2.util.Util;
 import com.kehinde.bakingapp.R;
 import com.kehinde.bakingapp.models.Step;
 import com.kehinde.bakingapp.util.Constants;
+import com.kehinde.bakingapp.util.ServiceUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,6 +50,7 @@ import butterknife.Unbinder;
 public class RecipeStepDetailFragment extends Fragment {
 
     @Nullable @BindView(R.id.txt_instruction) TextView txt_instruction;
+    @Nullable @BindView(R.id.stepThumbnail) ImageView stepThumbnail;
     @BindView(R.id.mExoPlayerView)
     SimpleExoPlayerView mExoPlayerView;
 
@@ -88,6 +91,16 @@ public class RecipeStepDetailFragment extends Fragment {
         if (txt_instruction!=null) {
             txt_instruction.setText(step.getDescription());
         }
+
+        //Show only if there is thumbnail URL
+        if (!step.getThumbnailURL().equals("")){
+            String url=step.getThumbnailURL();
+            ServiceUtil.loadImageFromResourceInto(getActivity(),stepThumbnail,url);
+            stepThumbnail.setVisibility(View.VISIBLE);
+        }
+
+
+
         //Get Video Url
         videoUrl=step.getVideoURL();
 
