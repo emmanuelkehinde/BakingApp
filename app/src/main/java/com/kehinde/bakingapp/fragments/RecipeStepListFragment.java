@@ -1,21 +1,19 @@
 package com.kehinde.bakingapp.fragments;
 
 
-import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
 import com.kehinde.bakingapp.R;
 import com.kehinde.bakingapp.adapters.TabAdapter;
-import com.kehinde.bakingapp.models.Ingredient;
 import com.kehinde.bakingapp.models.Recipe;
-import com.kehinde.bakingapp.models.Step;
 import com.kehinde.bakingapp.util.Constants;
 
 import java.util.ArrayList;
@@ -28,10 +26,12 @@ import butterknife.Unbinder;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class RecipeStepListFragment extends Fragment{
+public class RecipeStepListFragment extends Fragment {
 
-    @BindView(R.id.recipeViewPager) ViewPager recipeViewPager;
-    @BindView(R.id.recipeTabLayout) TabLayout recipeTabLayout;
+    @BindView(R.id.recipeViewPager)
+    ViewPager recipeViewPager;
+    @BindView(R.id.recipeTabLayout)
+    TabLayout recipeTabLayout;
 
     private List<Fragment> tabFragmentsList=new ArrayList<>();
     private List<String> tabTitleList=new ArrayList<>();

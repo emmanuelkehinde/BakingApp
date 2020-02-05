@@ -2,15 +2,15 @@ package com.kehinde.bakingapp.fragments;
 
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.kehinde.bakingapp.R;
 import com.kehinde.bakingapp.adapters.IngredientListAdapter;
@@ -26,9 +26,10 @@ import butterknife.Unbinder;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class IngredientTabFragment extends Fragment{
+public class IngredientTabFragment extends Fragment {
 
-    @BindView(R.id.ingredient_recycler) RecyclerView ingredient_recycler;
+    @BindView(R.id.ingredient_recycler)
+    RecyclerView ingredient_recycler;
     private ArrayList<Ingredient> ingredientArrayList;
     private Unbinder unbinder;
 

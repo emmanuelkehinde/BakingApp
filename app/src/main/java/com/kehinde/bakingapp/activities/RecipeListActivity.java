@@ -8,24 +8,25 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.annotation.VisibleForTesting;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.test.espresso.IdlingResource;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.PopupMenu;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.VisibleForTesting;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
+import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.test.espresso.IdlingResource;
+
+import com.google.android.material.snackbar.Snackbar;
 import com.kehinde.bakingapp.IdlingResource.SimpleIdlingResource;
 import com.kehinde.bakingapp.R;
 import com.kehinde.bakingapp.adapters.RecipeListAdapter;
@@ -49,10 +50,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RecipeListActivity extends AppCompatActivity implements RecipeListAdapter.RecipeSelectedListener{
 
-    @BindView(R.id.toolbar) Toolbar toolbar;
-    @BindView(R.id.coordLayout) CoordinatorLayout coordLayout;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.coordLayout)
+    CoordinatorLayout coordLayout;
     @BindView(R.id.progress) ProgressBar progress;
-    @BindView(R.id.recipe_list_recycler) RecyclerView recipe_list_recycler;
+    @BindView(R.id.recipe_list_recycler)
+    RecyclerView recipe_list_recycler;
     private ArrayList<Recipe> recipeArrayList=new ArrayList<>();
     Call<ArrayList<Recipe>> recipeCall;
     private final String KEY="KEY";

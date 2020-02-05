@@ -1,31 +1,25 @@
 package com.kehinde.bakingapp.activities;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
-import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.kehinde.bakingapp.R;
 import com.kehinde.bakingapp.fragments.RecipeStepDetailFragment;
 import com.kehinde.bakingapp.fragments.RecipeStepListFragment;
 import com.kehinde.bakingapp.fragments.StepTabFragment;
-import com.kehinde.bakingapp.models.Ingredient;
 import com.kehinde.bakingapp.models.Recipe;
 import com.kehinde.bakingapp.models.Step;
 import com.kehinde.bakingapp.util.Constants;
-import com.kehinde.bakingapp.widget.db.IngredientContract;
 
-
-import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,7 +29,8 @@ public class RecipeStepListActivity extends AppCompatActivity implements StepTab
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
-    @Nullable @BindView(R.id.detail_container)
+    @Nullable
+    @BindView(R.id.detail_container)
     FrameLayout detail_container;
 
     @Nullable @BindView(R.id.txt_help)

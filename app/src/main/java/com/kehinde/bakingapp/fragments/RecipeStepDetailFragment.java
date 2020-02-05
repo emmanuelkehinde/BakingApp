@@ -1,24 +1,18 @@
 package com.kehinde.bakingapp.fragments;
 
 
-import android.content.Context;
-import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.exoplayer2.ExoPlayer;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory;
@@ -49,7 +43,8 @@ import butterknife.Unbinder;
  */
 public class RecipeStepDetailFragment extends Fragment {
 
-    @Nullable @BindView(R.id.txt_instruction) TextView txt_instruction;
+    @Nullable
+    @BindView(R.id.txt_instruction) TextView txt_instruction;
     @Nullable @BindView(R.id.stepThumbnail) ImageView stepThumbnail;
     @BindView(R.id.mExoPlayerView)
     SimpleExoPlayerView mExoPlayerView;
