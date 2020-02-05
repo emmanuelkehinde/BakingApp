@@ -6,7 +6,7 @@ package com.kehinde.bakingapp.util;
 
 public class Constants {
 
-    public static final String BASE_URL = "http://go.udacity.com/";
+    public static final String BASE_URL = "https://go.udacity.com/";
     public static final String DESCRIPTION = "DESCRIPTION";
     public static final String SHORT_DESCRIPTION = "SHORT_DESCRIPTION";
     public static final String VIDEO_URL = "VIDEO_URL";
